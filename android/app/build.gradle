@@ -1,0 +1,26 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace 'com.replenest.app'
+    compileSdk 36
+    defaultConfig {
+        applicationId 'com.replenest.app'
+        minSdk 26
+        targetSdk 36
+        versionCode 6
+        versionName '0.1.5'
+        testInstrumentationRunner 'com.replenest.app.AcceptanceRunner'
+    }
+    signingConfigs {
+        debug {
+            storeFile rootProject.file('../.tools/debug.keystore')
+            storePassword 'android'
+            keyPassword 'android'
+            keyAlias 'androiddebugkey'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
